@@ -56,9 +56,12 @@ The test: every changed line should trace directly to the user's request.
 
 Transform tasks into verifiable goals:
 
-- "Add validation" → "Write tests for invalid inputs, then make them pass"
-- "Fix the bug" → "Write a test that reproduces it, then make it pass"
-- "Refactor X" → "Ensure tests pass before and after"
+Use build, typecheck, lint, a basic run, or a focused reproduction for fail-fast verification. Add regression tests only
+after the Human confirms intended behavior and semantics.
+
+- "Add validation" → "Clarify invalid-input semantics, implement validation, and run the relevant checks"
+- "Fix the bug" → "Trace callers, reproduce the failure, fix the shared root cause, and recheck affected paths"
+- "Refactor X" → "Confirm the behavior to preserve, refactor, and recheck it"
 
 For multi-step tasks, state a brief plan:
 
